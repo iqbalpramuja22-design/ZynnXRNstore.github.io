@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Top up 80+ game & layanan digital instan. Harga termurah, proses cepat, support 24/7.">
+    <title>ZynnXRN store • Top Up Game & Joki</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Animasi background premium */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(138, 43, 226, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(0, 230, 120, 0.12) 0%, transparent 40%),
+                linear-gradient(125deg, #0f0c29, #302b63, #24243e);
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle, transparent 20%, #000 80%),
+                radial-gradient(circle, #1a1a2e 20%, transparent 80%) 50px 50px,
+                radial-gradient(circle, #16213e 20%, transparent 80%) 75px 75px;
+            background-size: 100px 100px;
+            opacity: 0.15;
+            z-index: -1;
+            pointer-events: none;
+            animation: drift 25s linear infinite;
+        }
+
+        @keyframes drift {
+            from { transform: translate(0, 0); }
+            to { transform: translate(-100px, -100px); }
+        }
+
+        :root {
+            --primary: #9d4edd;
+            --joki: #ff6b6b;
+            --card: rgba(25, 23, 45, 0.85);
+            --text: #ffffff;
+            --text-secondary: #c5c6d0;
+            --border-radius: 22px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            padding: 16px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin: 20px 0 25px;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #ff00cc, var(--primary), #00f5d4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 15px rgba(157, 78, 221, 0.4);
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-top: 8px;
+            font-weight: 300;
+        }
+
+        /* Stats Card */
+        .stats-card {
+            background: var(--card);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 22px;
+            border: 1px solid rgba(157, 78, 221, 0.3);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #00f5d4;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* Main Card */
+        .main-card {
+            background: var(--card);
+            border-radius: var(--border-radius);
+            padding: 26px;
+            margin-bottom: 24px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(157, 78, 221, 0.3);
+            position: relative;
+        }
+
+        .main-card::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff00cc, #9d4edd, #00f5d4, #00c853);
+            z-index: -1;
+            border-radius: calc(var(--border-radius) + 2px);
+            animation: borderRotate 10s linear infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes borderRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 22px;
+            background: rgba(0,0,0,0.2);
+            padding: 6px;
+            border-radius: 16px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px;
+            background: transparent;
+            border: none;
+            border-radius: 12px;
+            color: var(--text-secondary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(0, 0, 0, 0.25);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(157, 78, 221, 0.3);
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            margin: 22px 0 14px;
+            font-weight: 700;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        .games-grid, .joki-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 11px;
+        }
+
+        .game-item, .joki-item {
+            text-align: center;
+            padding: 13px 4px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 13px;
+            cursor: pointer;
+            transition: all 0.25s;
+            font-size: 0.68rem;
+            border: 1px solid transparent;
+        }
+
+        .game-item:hover, .game-item.active,
+        .joki-item:hover, .joki-item.active {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            border-color: white;
+            box-shadow: 0 5px 15px rgba(157, 78, 221, 0.4);
+        }
+
+        .game-item i, .joki-item i {
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 11px;
+            margin-top: 12px;
+        }
+
+        .amount-btn {
+            padding: 13px 0;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 13px;
+            color: var(--text);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .amount-btn:hover, .amount-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: scale(1.03);
+        }
+
+        .hidden-number {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            padding: 22px;
+            text-align: center;
+            margin: 24px 0;
+            display: none;
+            border: 1px solid rgba(0, 245, 212, 0.3);
+        }
+
+        .number-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            font-family: 'Orbitron', monospace;
+            color: #00f5d4;
+            margin: 12px 0;
+            text-shadow: 0 0 10px rgba(0, 245, 212, 0.5);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(90deg, var(--primary), #6a1cb0);
+            color: white;
+            border: none;
+            border-radius: 16px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(157, 78, 221, 0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(157, 78, 221, 0.6);
+        }
+
+        /* Info Cards */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin: 20px 0;
+        }
+
+        .info-card {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 14px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .info-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .info-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        .info-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ & Footer */
+        .faq-item {
+            margin-bottom: 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 16px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 16px;
+        }
+
+        .contact-number {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #00f5d4;
+            font-family: 'Orbitron', monospace;
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 25px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 580px) {
+            .games-grid, .joki-grid, .amount-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .info-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 440px) {
+            .games-grid, .joki-grid, .amount-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .logo {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">ZynnXRN</div>
+            <p class="tagline">Top Up 80+ Game • Joki Profesional • Proses Cepat 1-10 Menit</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-card">
+            <div class="stats">
+                <div>
+                    <div class="stat-value" id="topupCount">0</div>
+                    <div class="stat-label">Top Up</div>
+                </div>
+                <div>
+                    <div class="stat-value" id="jokiCount">0</div>
+                    <div class="stat-label">Joki</div>
+                </div>
+                <div>
+                    <div class="stat-value">80+</div>
+                    <div class="stat-label">Game</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Form -->
+        <div class="main-card">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="topup">🎮 Top Up</button>
+                <button class="tab-btn" data-tab="joki">🏆 Joki</button>
+            </div>
+
+            <div class="tab-content active" id="topupTab">
+                <div class="form-group">
+                    <label>ID Pengguna / Email</label>
+                    <input type="text" id="userId" placeholder="Contoh: ML123456789 atau email@gmail.com">
+                </div>
+
+                <div class="form-group">
+                    <div class="section-title"><i class="fas fa-mobile-alt"></i> Mobile Games</div>
+                    <div class="games-grid" id="mobileGames"></div>
+                </div>
+
+                <div class="form-group">
+                    <div class="section-title"><i class="fas fa-desktop"></i> PC & Online</div>
+                    <div class="games-grid" id="pcGames"></div>
+                </div>
+
+                <div class="form-group">
+                    <div class="section-title"><i class="fas fa-tv"></i> Digital & Lainnya</div>
+                    <div class="games-grid" id="digitalGames"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Pilih Jumlah Top Up</label>
+                    <div class="amount-grid" id="amountGrid"></div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="jokiTab">
+                <div class="form-group">
+                    <label>ID Mobile Legends / Hok</label>
+                    <input type="text" id="jokiId" placeholder="Contoh: ML123456789">
+                </div>
+
+                <div class="form-group">
+                    <div class="section-title"><i class="fas fa-medal"></i> Layanan Joki</div>
+                    <div class="joki-grid" id="jokiGrid"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Harga Joki</label>
+                    <div class="amount-grid" id="jokiPriceGrid"></div>
+                </div>
+            </div>
+
+            <!-- Nomor Tujuan -->
+            <div class="hidden-number" id="numberBox">
+                <p><i class="fas fa-lock"></i> Nomor Tujuan Resmi ZynnXRN:</p>
+                <div class="number-text">082195838561</div>
+                <p style="font-size:0.95rem; color:#a0f0e0; margin-top:12px;">
+                    Transfer ke nomor di atas via DANA / ShopeePay / OVO / GoPay / Pulsa.<br>
+                    Setelah transfer, konfirmasi via WhatsApp.
+                </p>
+            </div>
+
+            <button class="btn" id="submitBtn">
+                <i class="fas fa-rocket"></i> Tampilkan Nomor & Konfirmasi
+            </button>
+        </div>
+
+        <!-- Info Cards -->
+        <div class="info-cards">
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-bolt"></i></div>
+                <div class="info-title">Proses Cepat</div>
+                <div class="info-desc">1-10 menit setelah konfirmasi</div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="info-title">Aman & Terpercaya</div>
+                <div class="info-desc">Ribuan pelanggan puas</div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="main-card">
+            <div class="section-title"><i class="fas fa-question-circle"></i> FAQ</div>
+            <div class="faq-item">
+                <div class="faq-question">Berapa lama proses top-up?</div>
+                <div class="faq-answer">1-10 menit setelah Anda konfirmasi pembayaran via WhatsApp.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Apakah aman?</div>
+                <div class="faq-answer">Sangat aman! Kami tidak menyimpan data akun Anda.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Bagaimana jika belum masuk?</div>
+                <div class="faq-answer">Hubungi kami via WhatsApp, kami akan bantu sampai selesai.</div>
+            </div>
+        </div>
+
+        <!-- Kontak -->
+        <div class="contact-info">
+            <p><i class="fab fa-whatsapp"></i> Butuh bantuan? Hubungi kami:</p>
+            <div class="contact-number">082195838561</div>
+            <p style="font-size:0.9rem; color:var(--text-secondary);">Layanan 24/7 • Respon cepat</p>
+        </div>
+
+        <footer>
+            <p>© 2025 ZynnXRN • Top Up Game & Joki Profesional</p>
+            <p style="margin-top:8px; font-size:0.8rem;">Nomor Resmi: 082195838561</p>
+        </footer>
+    </div>
+
+    <script>
+        // Riwayat pengguna
+        let history = JSON.parse(localStorage.getItem('zynnxrn_history')) || { topup: 0, joki: 0 };
+        document.getElementById('topupCount').textContent = history.topup;
+        document.getElementById('jokiCount').textContent = history.joki;
+
+        function saveHistory() {
+            localStorage.setItem('zynnxrn_history', JSON.stringify(history));
+            document.getElementById('topupCount').textContent = history.topup;
+            document.getElementById('jokiCount').textContent = history.joki;
+        }
+
+        // Daftar game lengkap (80+)
+        const allGames = [
+            // 📱 Mobile (40+)
+            { id: 'mlbb', name: 'MLBB', icon: 'fas fa-shield-alt', cat: 'mobile', prices: [1000, 5000, 10000, 25000, 50000, 100000] },
+            { id: 'freefire', name: 'Free Fire', icon: 'fas fa-fire', cat: 'mobile', prices: [1000, 5000, 10000, 25000, 50000, 100000] },
+            { id: 'pubg', name: 'PUBG Mobile', icon: 'fas fa-crosshairs', cat: 'mobile', prices: [1000, 5000, 10000, 25000, 50000, 100000] },
+            { id: 'genshin', name: 'Genshin', icon: 'fas fa-moon', cat: 'mobile', prices: [20000, 50000, 100000, 250000, 500000] },
+            { id: 'valorant', name: 'Valorant', icon: 'fas fa-bolt', cat: 'mobile', prices: [25000, 50000, 100000, 200000, 400000] },
+            { id: 'coc', name: 'Clash of Clans', icon: 'fas fa-crown', cat: 'mobile', prices: [1000, 5000, 10000, 25000, 50000] },
+            { id: 'clashroyale', name: 'Clash Royale', icon: 'fas fa-chess-rook', cat: 'mobile', prices: [1000, 5000, 10000, 25000, 50000] },
+            { id: 'aov', name: 'Arena of Valor', icon: 'fas fa-dragon', cat: 'mobile', prices: [1000, 5000, 10000, 25000, 50000] },
+            { id: 'sausage', name: 'Sausage Man', icon: 'fas fa-hotdog', cat: 'mobile', prices: [1000, 5000, 10000, 25000, 50000] },
+            { id: 'honkai', name: 'Honkai Star Rail', icon: 'fas fa-star', cat: 'mobile', prices: [25000, 50000, 100000, 250000, 500000] },
+            { id: 'dragonraja', name: 'Dragon Raja', icon: 'fas fa-dragon', cat: 'mobile', prices: [10000, 25000, 50000, 100000] },
+            { id: 'lokapala', name: 'Lokapala', icon: 'fas fa-shield-virus', cat: 'mobile', prices: [1000, 5000, 10000, 25000, 50000] },
+            { id: 'pbm', name: 'Point Blank', icon: 'fas fa-gun', cat: 'mobile', prices: [1000, 5000, 10000, 25000, 50000] },
+            { id: 'ragnarokm', name: 'Ragnarok M', icon: 'fas fa-dragon', cat: 'mobile', prices: [10000, 25000, 50000, 100000] },
+            { id: 'codm', name: 'COD Mobile', icon: 'fas fa-shield', cat: 'mobile', prices: [10000, 25000, 50000, 100000] },
+            { id: 'amongus', name: 'Among Us', icon: 'fas fa-user-friends', cat: 'mobile', prices: [15000, 30000, 60000] },
+            { id: 'stumble', name: 'Stumble Guys', icon: 'fas fa-running', cat: 'mobile', prices: [10000, 25000, 50000] },
+            { id: 'brawlstars', name: 'Brawl Stars', icon: 'fas fa-fist-raised', cat: 'mobile', prices: [10000, 25000, 50000] },
+            { id: 'fifamobile', name: 'FIFA Mobile', icon: 'fas fa-futbol', cat: 'mobile', prices: [10000, 25000, 50000] },
+            { id: 'afkarena', name: 'AFK Arena', icon: 'fas fa-chess-knight', cat: 'mobile', prices: [10000, 25000, 50000] },
+            { id: 'riseofkingdoms', name: 'Rise of Kingdoms', icon: 'fas fa-monument', cat: 'mobile', prices: [10000, 25000, 50000] },
+            { id: 'lifeafter', name: 'LifeAfter', icon: 'fas fa-house-damage', cat: 'mobile', prices: [10000, 25000, 50000] },
+            { id: 'sky', name: 'Sky', icon: 'fas fa-cloud-sun', cat: 'mobile', prices: [20000, 50000, 100000] },
+            { id: 'pokemongo', name: 'Pokémon GO', icon: 'fas fa-paw', cat: 'mobile', prices: [20000, 50000, 100000] },
+            { id: 'identityv', name: 'Identity V', icon: 'fas fa-ghost', cat: 'mobile', prices: [10000, 25000, 50000] },
+            { id: 'soulknight', name: 'Soul Knight', icon: 'fas fa-gamepad', cat: 'mobile', prices: [10000, 25000, 50000] },
+            { id: 'marvelsw', name: 'Marvel Super War', icon: 'fas fa-mask', cat: 'mobile', prices: [10000, 25000, 50000] },
+            { id: 'callOfDuty', name: 'Call of Duty', icon: 'fas fa-shield', cat: 'mobile', prices: [10000, 25000, 50000, 100000] },
+            { id: 'mobilelegends', name: 'ML Diamond', icon: 'fas fa-gem', cat: 'mobile', prices: [1000, 5000, 10000, 25000, 50000, 100000] },
+            { id: 'hok', name: 'Heroes of Kings', icon: 'fas fa-chess-king', cat: 'mobile', prices: [1000, 5000, 10000, 25000, 50000] },
+            { id: 'arena', name: 'Arena Breakout', icon: 'fas fa-bomb', cat: 'mobile', prices: [10000, 25000, 50000] },
+            { id: 'wuthering', name: 'Wuthering Waves', icon: 'fas fa-wind', cat: 'mobile', prices: [20000, 50000, 100000] },
+            { id: 'zenless', name: 'Zenless Zone Zero', icon: 'fas fa-city', cat: 'mobile', prices: [20000, 50000, 100000] },
+            { id: 'tower', name: 'Tower of Fantasy', icon: 'fas fa-magic', cat: 'mobile', prices: [20000, 50000, 100000] },
+            { id: 'nikke', name: 'Goddess of Victory', icon: 'fas fa-venus', cat: 'mobile', prices: [20000, 50000, 100000] },
+            { id: 'arknights', name: 'Arknights', icon: 'fas fa-syringe', cat: 'mobile', prices: [20000, 50000, 100000] },
+            { id: 'fgo', name: 'Fate/Grand Order', icon: 'fas fa-ring', cat: 'mobile', prices: [20000, 50000, 100000] },
+            { id: 'azurlane', name: 'Azur Lane', icon: 'fas fa-ship', cat: 'mobile', prices: [20000, 50000, 100000] },
+            { id: 'punishing', name: 'Punishing Gray Raven', icon: 'fas fa-robot', cat: 'mobile', prices: [20000, 50000, 100000] },
+            { id: 'bluearchive', name: 'Blue Archive', icon: 'fas fa-school', cat: 'mobile', prices: [20000, 50000, 100000] },
+
+            // 💻 PC & Online (25+)
+            { id: 'steam', name: 'Steam Wallet', icon: 'fab fa-steam', cat: 'pc', prices: [50000, 100000, 200000, 500000, 1000000] },
+            { id: 'riot', name: 'Riot Points', icon: 'fas fa-crown', cat: 'pc', prices: [25000, 50000, 100000, 200000, 600000] },
+            { id: 'epic', name: 'Epic Games', icon: 'fas fa-gamepad', cat: 'pc', prices: [50000, 100000, 200000, 500000] },
+            { id: 'minecraft', name: 'Minecraft', icon: 'fas fa-cube', cat: 'pc', prices: [100000, 200000, 500000] },
+            { id: 'roblox', name: 'Roblox', icon: 'fas fa-dice-d20', cat: 'pc', prices: [25000, 50000, 100000, 200000] },
+            { id: 'ragnarok', name: 'Ragnarok Online', icon: 'fas fa-dragon', cat: 'pc', prices: [10000, 25000, 50000, 100000] },
+            { id: 'lostark', name: 'Lost Ark', icon: 'fas fa-ring', cat: 'pc', prices: [100000, 200000, 500000] },
+            { id: 'dota2', name: 'Dota 2', icon: 'fas fa-chess-board', cat: 'pc', prices: [50000, 100000, 200000] },
+            { id: 'cs2', name: 'CS2', icon: 'fas fa-shield-virus', cat: 'pc', prices: [50000, 100000, 200000] },
+            { id: 'apex', name: 'Apex Legends', icon: 'fas fa-tachometer-alt', cat: 'pc', prices: [50000, 100000, 200000] },
+            { id: 'wow', name: 'World of Warcraft', icon: 'fas fa-hat-wizard', cat: 'pc', prices: [100000, 200000, 500000] },
+            { id: 'ffxiv', name: 'Final Fantasy XIV', icon: 'fas fa-dragon', cat: 'pc', prices: [100000, 200000, 500000] },
+            { id: 'genshinpc', name: 'Genshin (PC)', icon: 'fas fa-moon', cat: 'pc', prices: [20000, 50000, 100000, 250000] },
+            { id: 'honkai3rd', name: 'Honkai Impact 3rd', icon: 'fas fa-meteor', cat: 'pc', prices: [20000, 50000, 100000] },
+            { id: 'maplestory', name: 'MapleStory', icon: 'fas fa-tree', cat: 'pc', prices: [25000, 50000, 100000] },
+            { id: 'bdo', name: 'Black Desert', icon: 'fas fa-mountain', cat: 'pc', prices: [100000, 200000, 500000] },
+            { id: 'warframe', name: 'Warframe', icon: 'fas fa-robot', cat: 'pc', prices: [50000, 100000, 200000] },
+            { id: 'poe', name: 'Path of Exile', icon: 'fas fa-route', cat: 'pc', prices: [50000, 100000, 200000] },
+            { id: 'lol', name: 'League of Legends', icon: 'fas fa-crown', cat: 'pc', prices: [25000, 50000, 100000] },
+            { id: 'eafc', name: 'EA FC Points', icon: 'fas fa-futbol', cat: 'pc', prices: [50000, 100000, 200000] },
+            { id: 'overwatch', name: 'Overwatch', icon: 'fas fa-mask', cat: 'pc', prices: [100000, 200000, 500000] },
+            { id: 'rainbow', name: 'Rainbow Six', icon: 'fas fa-shield-alt', cat: 'pc', prices: [100000, 200000, 500000] },
+            { id: 'destiny', name: 'Destiny 2', icon: 'fas fa-globe', cat: 'pc', prices: [100000, 200000, 500000] },
+            { id: 'starcraft', name: 'StarCraft', icon: 'fas fa-space-shuttle', cat: 'pc', prices: [100000, 200000, 500000] },
+
+            // 📺 Digital (15+)
+            { id: 'psn', name: 'PSN', icon: 'fab fa-playstation', cat: 'digital', prices: [100000, 200000, 500000, 1000000] },
+            { id: 'xbox', name: 'Xbox', icon: 'fab fa-xbox', cat: 'digital', prices: [100000, 200000, 500000] },
+            { id: 'nintendo', name: 'Nintendo', icon: 'fas fa-gamepad', cat: 'digital', prices: [100000, 200000, 500000] },
+            { id: 'apple', name: 'Apple ID', icon: 'fab fa-apple', cat: 'digital', prices: [50000, 100000, 200000, 500000] },
+            { id: 'googleplay', name: 'Google Play', icon: 'fab fa-google-play', cat: 'digital', prices: [10000, 25000, 50000, 100000] },
+            { id: 'netflix', name: 'Netflix', icon: 'fas fa-tv', cat: 'digital', prices: [54000, 109000, 186000] },
+            { id: 'spotify', name: 'Spotify', icon: 'fab fa-spotify', cat: 'digital', prices: [54900, 109000] },
+            { id: 'disney', name: 'Disney+', icon: 'fas fa-film', cat: 'digital', prices: [49000, 99000, 149000] },
+            { id: 'viu', name: 'Viu', icon: 'fas fa-video', cat: 'digital', prices: [39000, 79000] },
+            { id: 'iqiyi', name: 'iQIYI', icon: 'fas fa-tv', cat: 'digital', prices: [45000, 89000] },
+            { id: 'wetv', name: 'WeTV', icon: 'fas fa-photo-video', cat: 'digital', prices: [45000, 89000] },
+            { id: 'youtube', name: 'YouTube Premium', icon: 'fab fa-youtube', cat: 'digital', prices: [59000, 119000] },
+            { id: 'prime', name: 'Prime Video', icon: 'fas fa-shopping-cart', cat: 'digital', prices: [59000, 119000] },
+            { id: 'applemusic', name: 'Apple Music', icon: 'fab fa-apple', cat: 'digital', prices: [55000, 110000] },
+            { id: 'canva', name: 'Canva Pro', icon: 'fas fa-paint-brush', cat: 'digital', prices: [75000, 150000] }
+        ];
+
+        // Layanan joki
+        const jokiServices = [
+            { id: 'rankpush', name: 'Rank Push', icon: 'fas fa-arrow-up', prices: [25000, 50000, 100000, 200000] },
+            { id: 'winrate', name: 'Win Rate', icon: 'fas fa-percentage', prices: [20000, 40000, 80000] },
+            { id: 'carry', name: 'Akun Carry', icon: 'fas fa-user-friends', prices: [30000, 60000, 120000] },
+            { id: 'legendary', name: 'Legendary', icon: 'fas fa-crown', prices: [150000, 300000] },
+            { id: 'mythic', name: 'Mythic', icon: 'fas fa-dragon', prices: [100000, 200000, 400000] },
+            { id: 'epic', name: 'Epic', icon: 'fas fa-star', prices: [50000, 100000] },
+            { id: 'grandmaster', name: 'Grandmaster', icon: 'fas fa-chess-king', prices: [250000, 500000] },
+            { id: 'hokrank', name: 'Hok Rank Push', icon: 'fas fa-trophy', prices: [30000, 60000, 120000, 250000] }
+        ];
+
+        let currentMode = 'topup';
+        let selectedGame = null;
+        let selectedJoki = null;
+
+        // Render game
+        function renderGames() {
+            const containers = {
+                mobile: document.getElementById('mobileGames'),
+                pc: document.getElementById('pcGames'),
+                digital: document.getElementById('digitalGames')
+            };
+
+            Object.values(containers).forEach(el => el.innerHTML = '');
+
+            allGames.forEach(game => {
+                const el = document.createElement('div');
+                el.className = 'game-item';
+                el.innerHTML = `<i class="${game.icon}"></i>${game.name}`;
+                el.title = game.name;
+
+                el.addEventListener('click', () => {
+                    document.querySelectorAll('.game-item').forEach(g => g.classList.remove('active'));
+                    el.classList.add('active');
+                    selectedGame = game;
+                    renderPrices(game.prices);
+                });
+
+                if (containers[game.cat]) {
+                    containers[game.cat].appendChild(el);
+                }
+            });
+        }
+
+        // Render joki
+        function renderJoki() {
+            const grid = document.getElementById('jokiGrid');
+            grid.innerHTML = '';
+            jokiServices.forEach(service => {
+                const el = document.createElement('div');
+                el.className = 'joki-item';
+                el.innerHTML = `<i class="${service.icon}"></i>${service.name}`;
+                el.addEventListener('click', () => {
+                    document.querySelectorAll('.joki-item').forEach(g => g.classList.remove('active'));
+                    el.classList.add('active');
+                    selectedJoki = service;
+                    renderJokiPrices(service.prices);
+                });
+                grid.appendChild(el);
+            });
+        }
+
+        function renderPrices(prices) {
+            const grid = document.getElementById('amountGrid');
+            grid.innerHTML = '';
+            prices.forEach(price => {
+                const btn = document.createElement('button');
+                btn.className = 'amount-btn';
+                btn.textContent = `Rp ${price.toLocaleString('id-ID')}`;
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    selectedGame.selectedPrice = price;
+                });
+                grid.appendChild(btn);
+            });
+        }
+
+        function renderJokiPrices(prices) {
+            const grid = document.getElementById('jokiPriceGrid');
+            grid.innerHTML = '';
+            prices.forEach(price => {
+                const btn = document.createElement('button');
+                btn.className = 'amount-btn';
+                btn.textContent = `Rp ${price.toLocaleString('id-ID')}`;
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    selectedJoki.selectedPrice = price;
+                });
+                grid.appendChild(btn);
+            });
+        }
+
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                btn.classList.add('active');
+                currentMode = btn.dataset.tab;
+                document.getElementById(currentMode + 'Tab').classList.add('active');
+            });
+        });
+
+        // Submit
+        document.getElementById('submitBtn').addEventListener('click', () => {
+            let userId, itemName, price;
+
+            if (currentMode === 'topup') {
+                userId = document.getElementById('userId').value.trim();
+                if (!selectedGame || !selectedGame.selectedPrice || !userId) {
+                    alert('❌ Lengkapi data top up!');
+                    return;
+                }
+                itemName = selectedGame.name;
+                price = selectedGame.selectedPrice;
+                history.topup++;
+            } else {
+                userId = document.getElementById('jokiId').value.trim();
+                if (!selectedJoki || !selectedJoki.selectedPrice || !userId) {
+                    alert('❌ Lengkapi data joki!');
+                    return;
+                }
+                itemName = selectedJoki.name;
+                price = selectedJoki.selectedPrice;
+                history.joki++;
+            }
+
+            saveHistory();
+
+            document.getElementById('numberBox').style.display = 'block';
+            document.getElementById('numberBox').scrollIntoView({ behavior: 'smooth' });
+
+            const message = `Halo ZynnXRN store!\n\nJenis: ${currentMode === 'topup' ? 'Top Up' : 'Joki'}\nItem: ${itemName}\nID: ${userId}\nJumlah: Rp ${price.toLocaleString('id-ID')}\n\nSaya akan transfer ke 082195838561.`;
+            const waUrl = `https://wa.me/6282195838561?text=${encodeURIComponent(message)}`;
+
+            if (confirm('✅ Data dikirim!\n\nBuka WhatsApp untuk konfirmasi?')) {
+                window.open(waUrl, '_blank');
+            }
+        });
+
+        // Inisialisasi
+        renderGames();
+        renderJoki();
+    </script>
+</body>
+</html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Event ZynnXRN Store</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #0f0c29, #1a1a2e);
+      color: white;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .event-banner {
+      background: linear-gradient(45deg, #ff00cc, #3333ff);
+      padding: 25px;
+      border-radius: 16px;
+      text-align: center;
+      margin-bottom: 25px;
+      box-shadow: 0 0 20px rgba(255, 0, 204, 0.4);
+    }
+    .event-banner h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .countdown-box {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 10px;
+      border-radius: 8px;
+      min-width: 60px;
+      text-align: center;
+    }
+    .countdown-box span {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #00f3ff;
+    }
+    .countdown-box small {
+      font-size: 0.75rem;
+      color: #ccc;
+    }
+    .rewards {
+      background: #16213e;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+    .reward-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #2d2d44;
+    }
+    .reward-item:last-child {
+      border-bottom: none;
+    }
+    .reward-icon {
+      width: 40px;
+      height: 40px;
+      background: #ff00cc;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(45deg, #ff00cc, #00f3ff);
+      color: #0f0c29;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 20px;
+      toh-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:active {
+      opacity: 0.9;
+    }
+    .expired {
+      text-align: center;
+      padding: 40px 20px;
+      color: #ff6b6b;
+      font-size: 1.2rem;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <div class="event-banner">
+    <h1>🔥 GRAND EVENT DIAMOND MURAH!</h1>
+    <p>Top up Mobile Legends & Free Fire dengan harga spesial!</p>
+    
+    <!-- Countdown Timer -->
+    <div class="countdown" id="countdown">
+      <div class="countdown-box"><span id="days">00</span><small>Hari</small></div>
+      <div class="countdown-box"><span id="hours">00</span><small>Jam</small></div>
+      <div class="countdown-box"><span id="minutes">00</span><small>Menit</small></div>
+      <div class="countdown-box"><span id="seconds">00</span><small>Dtk</small></div>
+    </div>
+
+    <p>📅 16–30 Oktober 2025</p>
+  </div>
+
+  <!-- Hadiah / Promo -->
+  <div class="rewards">
+    <h3 style="color:#00f3ff; margin-bottom:15px;">🎁 Promo Spesial Event</h3>
+    
+    <div class="reward-item">
+      <div class="reward-icon">1</div>
+      <div>
+        <strong>Diamond MLBB 100</strong><br>
+        <small>Hanya Rp5.000 (normal Rp12.000)</small>
+      </div>
+    </div>
+    
+    <div class="reward-item">
+      <div class="reward-icon">2</div>
+      <div>
+        <strong>DIAMOND Free Fire 100</strong><br>
+        <small>Rp8.000 (hemat 40%)</small>
+      </div>
+    </div>
+    
+    <div class="reward-item">
+      <div class="reward-icon">🔥</div>
+      <div>
+        <strong>Bonus Voucher</strong><br>
+        <small>50 pembeli pertama dapat voucher Rp10.000!</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol Ikut Event -->
+  <button class="btn" id="joinBtn">Ikut Event Sekarang →</button>
+
+  <footer>
+    © 2025 ZynnXRN Store • Pembayaran via WhatsApp: 0821-9583-8561
+  </footer>
+</div>
+
+<script>
+  // === SETEL TANGGAL EVENT ===
+  const eventStart = new Date('2025-10-16T00:00:00'); // Mulai
+  const eventEnd = new Date('2025-10-30T23:59:59');   // Berakhir
+
+  // Cek apakah event sudah berakhir
+  function isEventActive() {
+    const now = new Date();
+    return now >= eventStart && now <= eventEnd;
+  }
+
+  // Update countdown
+  function updateCountdown() {
+    const now = new Date();
+    let distance;
+
+    if (now < eventStart) {
+      // Belum mulai
+      document.querySelector('.event-banner h1').textContent = 'Event Segera Dimulai!';
+      distance = eventStart - now;
+    } else if (now <= eventEnd) {
+      // Sedang berlangsung
+      distance = eventEnd - now;
+    } else {
+      // Sudah berakhir
+      showExpired();
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('days').textContent = String(days).padStart(2, '0');
+    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+  }
+
+  function showExpired() {
+    document.querySelector('.container').innerHTML = `
+      <div class="expired">
+        <h2>⏰ Event Telah Berakhir</h2>
+        <p>Terima kasih telah berpartisipasi!</p>
+        <p><a href="index.html" style="color:#00f3ff; display:inline-block; margin-top:15px;">Kembali ke Toko</a></p>
+      </div>
+      <footer style="text-align:center; margin-top:30px; color:#aaa;">
+        © 2025 ZynnXRN Store
+      </footer>
+    `;
+  }
+
+  // Handle tombol ikut event
+  document.getElementById('joinBtn').addEventListener('click', function() {
+    if (!isEventActive()) {
+      alert('Event belum dimulai atau sudah berakhir.');
+      return;
+    }
+
+    // Pesan otomatis ke WhatsApp
+    const message = `Halo ZynnXRN Store!%0A%0ASaya ingin ikut EVENT DIAMOND MURAH!%0A%0A`;
+    const waUrl = `https://wa.me/6282195838561?text=${message}`;
+    window.open(waUrl, '_blank');
+  });
+
+  // Jalankan pertama kali
+  if (!isEventActive() && new Date() > eventEnd) {
+    showExpired();
+  } else {
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+</script>
+
+</body>
+</html>
